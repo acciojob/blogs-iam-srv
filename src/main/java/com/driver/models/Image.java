@@ -1,15 +1,10 @@
-
-
 package com.driver.models;
-
-import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "Image")
 public class Image{
-
      @Id
      @GeneratedValue(strategy = GenerationType.IDENTITY)
      private int id;
@@ -20,22 +15,22 @@ public class Image{
      @JoinColumn
      private Blog blog;
 
-     public Image(){
-
+     public Image() {
      }
-
 
      public Image(Blog blog, String description, String dimensions) {
           this.description = description;
           this.dimensions = dimensions;
           this.blog = blog;
      }
+
      public Image(int id, String description, String dimensions, Blog blog) {
           this.id = id;
           this.description = description;
           this.dimensions = dimensions;
           this.blog = blog;
      }
+
      public int getId() {
           return id;
      }
@@ -67,5 +62,4 @@ public class Image{
      public void setBlog(Blog blog) {
           this.blog = blog;
      }
-
 }
